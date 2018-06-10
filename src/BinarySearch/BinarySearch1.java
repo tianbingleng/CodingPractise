@@ -1,21 +1,36 @@
+package BinarySearch;
+
 import java.util.Arrays;
 
 /**
  * Created by tianbingleng on 21/6/2017.
  */
-public class ZZZBinarySearch {
+public class BinarySearch1 {
     static public void main(String[] args) {
 
         /*
+
+        Question 0.
+        DO THIS FIRST. (AFTER THE first/last occurrence target in the array.  )
+        https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
+
         Question 1.
 
-        In a sorted array, find the maximum number smaller than target.
+        In a sorted array, find the maximum number smaller than target. (The number is exist!!)
+        Return the <index> of the number, if not found, return -1.
 
         */
         System.out.println("Question 1.");
         int[] array0 = new int[]{1, 2, 3, 4, 5, 5, 6, 6, 7, 8};
-        int target = 7;
-        System.out.println(MaxSmaller(array0, target));
+        System.out.println(MaxSmaller(array0, 8));
+        System.out.println(MaxSmaller(array0, 7));
+        System.out.println(MaxSmaller(array0, 6));
+        System.out.println(MaxSmaller(array0, 5));
+        System.out.println(MaxSmaller(array0, 4));
+
+        // UNDONE =======================================
+        // UNDONE =======================================
+        // UNDONE =======================================
 
         /*
         Question 2.
@@ -65,14 +80,12 @@ public class ZZZBinarySearch {
                 left = mid;
             }
         }
-        // print the index out
-        if (array[right] < target) {
-            return right;
+
+        if (array[left] == target) {
+            return left - 1;
+        } else {
+            return right - 1;
         }
-        if (array[left] < target) {
-            return left;
-        }
-        return -1;
     }
 
     public static int FindSmallest(int[] array) {
