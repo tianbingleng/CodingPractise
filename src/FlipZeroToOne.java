@@ -6,18 +6,20 @@ public class FlipZeroToOne {
 //        Given a binary array and an integer m, find the position of zeroes flipping which creates maximum number
 //        of consecutive 1’s in array.
 
-//        int array[] = new int[]{1, 0, 0, 1, 1, 0, 1, 0, 1, 1};
-//        int k = 2
+        int array[] = new int[]{1, 0, 0, 1, 1, 0, 1, 0, 1, 1};
+        int k = 2;
 //        Output:  5 7
 
-        int array[] = new int[]{1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1};
-        int k = 1;
+//        int array[] = new int[]{1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1};
+//        int k = 1;
 //        Output:  7
 
 //        int array[] = new int[]{0, 0, 0, 1};
 //        int k = 4;
 //        Output:  0 1 2
         findZeroes(array, k);
+        System.out.println();
+        System.out.println("sdfsdf = "+findMaxConsecutiveOnes(array));
     }
     private static void findZeroes(int[] array, int k) {
         // sliding window problem
@@ -65,6 +67,27 @@ public class FlipZeroToOne {
             }
         }
 
+    }
+
+    public static int findMaxConsecutiveOnes(int[] nums) {
+        int k = 2;
+        int max = 0;
+        int flipCount = 0;
+        int slow = 0;
+        for (int fast = 0; fast < nums.length; fast++) {
+            if (nums[fast] == 1) {
+                max = Math.max(max, fast - slow + 1);
+            } else {
+                if (flipCount < k) {
+                    flipCount++;
+                    max = Math.max(max, fast - slow + 1);
+                } else {
+                    while (nums[slow++] != 0);
+                    max = Math.max(max, fast - slow + 1);
+                }
+            }
+        }
+        return max;
     }
 
 }

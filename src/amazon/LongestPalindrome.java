@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class LongestPalindrome {
     public static void main(String[] args) {
-        // String str="abcba";
-        String str = "abaxabaxabybaxabyb";
+        String str="abcba";
+        // String str = "abaxabaxabybaxabyb";
 
         System.out.println(longestPalindrome(str));
         // String result=preProcess(str);
@@ -23,8 +23,10 @@ public class LongestPalindrome {
         int start = 0;
         // index i is the end of the substring
         for (int i = 0; i < n; i++) {
+            System.out.println("start from i =" +i);
             // index j is the start of the substring
             for (int j = i; j >= 0; j--) {
+                System.out.println("start from i =" +i+", j="+j);
                 if ((str.charAt(i) == str.charAt(j)) && ((i - j <= 1) || isPal[j + 1][i - 1])) {
                     isPal[j][i] = true;
                     if ((i - j + 1) > maxLen) {
