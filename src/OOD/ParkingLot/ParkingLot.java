@@ -1,8 +1,4 @@
-package ParkingLot;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+package OOD.ParkingLot;
 
 /**
  * Created by tianbingleng on 21/10/2017.

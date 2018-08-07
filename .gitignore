@@ -1,0 +1,15 @@
+# Project artifacts
+# =================
+
+# Build
+target/
+*.class
+
+# IDE - IntelliJ
+# ==============
+.idea/
+*.iml
+
+# Output folder (recorder, reports, upgrades...)
+output/
+

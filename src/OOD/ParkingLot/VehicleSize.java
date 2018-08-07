@@ -1,4 +1,4 @@
-package ParkingLot;
+package OOD.ParkingLot;
 
 /**
  * Created by tianbingleng on 21/10/2017.

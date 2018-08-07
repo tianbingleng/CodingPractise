@@ -1,7 +1,10 @@
-package ParkingLot;
+package OOD.ParkingLot;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.sun.tools.javac.util.Assert;
+
 
 /**
  * Created by tianbingleng on 21/10/2017.
@@ -15,17 +18,17 @@ public class Test {
             list.add(v);
             boolean hasSpot = lot.hasSpot(v);
             if (i < 40) {
-                assert hasSpot;
-                assert lot.park(v);
+                Assert.check(hasSpot);
+                Assert.check(lot.park(v));
             } else {
-                assert !hasSpot;
-                assert !lot.park(v);
+                Assert.check(!hasSpot);
+                Assert.check(!lot.park(v));
             }
         }
         assert list.size() == 50;
         int i = 0;
         for (Vehicle v : list) {
-            assert i >= 40 || lot.leave(v);
+            Assert.check(i >= 40 || lot.leave(v));
             i++;
         }
     }

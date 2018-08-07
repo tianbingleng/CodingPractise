@@ -1,4 +1,4 @@
-package ParkingLot;
+package OOD.ParkingLot;
 
 import java.util.ArrayList;
 import java.util.Collections;
