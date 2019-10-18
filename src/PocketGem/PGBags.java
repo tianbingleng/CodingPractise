@@ -72,7 +72,7 @@ public class PGBags {
             while (freqMap.get(item) >= item.maximum_stack_size) {
                 minHeap.offer(item.value * item.maximum_stack_size);
                 freqMap.put(item, freqMap.get(item) - item.maximum_stack_size);
-                //                                                                                                                                                              System.out.println("insert value:"+item.value * item.maximum_stack_size);
+                //System.out.println("insert value:"+item.value * item.maximum_stack_size);
             }
             // it is not oversize, if it is > 0, add the rest into heap
             if (freqMap.get(item) > 0) {

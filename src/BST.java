@@ -250,7 +250,8 @@ public class BST implements BSTInterface {
 
         return successor;
     }
-
+    // Time: O(n)
+    // Space: O(1)
     public List<Integer> preOrderTraverse() {
         List<Integer> list = new ArrayList<Integer>();
         if(root == null) {
